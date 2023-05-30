@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    "corsheaders",
     'rest_framework',  
     'project',
     
@@ -52,11 +52,11 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -128,7 +128,12 @@ USE_I18N = True
 
 USE_TZ = True
 
-CORS_ORIGIN_ALLOW_ALL =True
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:5173",
+    
+    
+]
 
 
 # Static files (CSS, JavaScript, Images)
