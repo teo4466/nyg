@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'project',
     
     
@@ -60,8 +61,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
+CORS_ORIGIN_WHITLIST =(
+    'htts://localhost:8000', 'https://nyg.onrender.com/api/project/'
+)
 ROOT_URLCONF = 'nyj.urls'
 
 TEMPLATES = [
