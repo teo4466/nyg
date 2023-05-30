@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware'
 ]
 
-CORS_ORIGIN_WHITLIST =(
+CORS_ORIGIN_WHITELIST =(
     'htts://localhost:8000', 'https://nyg.onrender.com/api/project/'
 )
 ROOT_URLCONF = 'nyj.urls'
