@@ -134,7 +134,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://splendid-kelpie-0ea91f.netlify.app",
     "https://nyglog.netlify.app/",
-    "http://localhost:5174/clientes"
+    
     
 
     
