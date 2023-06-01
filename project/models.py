@@ -7,3 +7,7 @@ class Clientes(models.Model):
     direccion = models.CharField(max_length=150)
     telefono = models.CharField(max_length=10)
     created_at = models.DateTimeField(auto_now_add= True)
+
+class Departments(models.Model):
+    nombre =models.CharField(max_length=50)
+
