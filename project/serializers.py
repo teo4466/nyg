@@ -13,3 +13,4 @@ class DepartmentsSerializer(serializers.ModelSerializer):
         model= Departments
         fields=("id", "nombre",)
         read_only_fields = ("created_at",)
+        
