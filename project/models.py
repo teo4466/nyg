@@ -86,14 +86,14 @@ class Accesorioscamion(models.Model):
 
 class Checkcamion(models.Model):
     camion = models.ForeignKey(Camiones, on_delete=models.CASCADE)
-    Jornadas = models.ForeignKey(Jornadas, on_delete=models.CASCADE)
+    Jornada = models.ForeignKey(Jornadas, on_delete=models.CASCADE)
     luces = models.BooleanField(default=True)
     limpiaparabrizas =models.BooleanField(default=True)
     frenos = models.BooleanField(default=True)
-    nivelFluidos = models.BooleanField(default=True)
-    Cubiertas = models.BooleanField(default=True)
+    nivelfluidos = models.BooleanField(default=True)
+    cubiertas = models.BooleanField(default=True)
     plataforma = models.BooleanField(default=True)
-    extructura = models.BooleanField(default=True)
+    estructura = models.BooleanField(default=True)
     amarres = models.BooleanField(default=True)
     accesorios =models.BooleanField(default=True)
     observaciones = models.TextField(max_length=300)
