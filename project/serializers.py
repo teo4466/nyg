@@ -17,72 +17,72 @@ class DepartmentsSerializer(serializers.ModelSerializer):
 class EmpleadosSerializer(serializers.ModelSerializer):
     class Meta:
         models= Empleados
-        field= ("id", "nombre", "direccion", "telefono", "email", "contraseña")
+        fields= ("id", "nombre", "direccion", "telefono", "email", "contraseña")
 
 class PerfilempleadoSerializer(serializers.ModelSerializer):
     class Meta:
         models=Perfilempleado
-        field=("id" ,"empleado", "cargo")
+        fields=("id" ,"empleado", "cargo")
 
 class AccesoriosempleadoSerializer(serializers.ModelSerializer):
     class Meta:
         models= Accesoriosempleado
-        field =("id", " nombre")
+        fields =("id", " nombre")
 
 class AccesorioentregadoSerializer(serializers.ModelSerializer):
     class Meta:
         models= Accesorioentregado
-        field=("id", "empleadop", "nombre", "fechaentrega")
+        fields=("id", "empleadop", "nombre", "fechaentrega")
 
 class HabilitacionesempleadoSerializer(serializers.ModelSerializer):
     class Meta:
         models= Habilitacionesempleado
-        field=("id", "empleadop","nombre", "vencimiento")
+        fields=("id", "empleadop","nombre", "vencimiento")
 
 class CapacitacionSerializer(serializers.ModelSerializer):
     class Meta:
         models= Capacitacion
-        field=("id", "empleadop", "tema", "fecha")
+        fields=("id", "empleadop", "tema", "fecha")
 
 class JornadasSerializer(serializers.ModelSerializer):
     class Meta:
         models= Jornadas
-        field= ("id", "empleado", "concentimiento", "entrada", "salida", "horasextras", "viaticos", "kmsalida", "kmllegada", "observaciones")
+        fields= ("id", "empleado", "concentimiento", "entrada", "salida", "horasextras", "viaticos", "kmsalida", "kmllegada", "observaciones")
 
 class VisitasSerializer(serializers.ModelSerializer):
     class Meta:
         models= Visitas
-        field=("id", "jornada", "cliente", "momentorecibida", "momentocumplida", "direccion", "cumplida")
+        fields=("id", "jornada", "cliente", "momentorecibida", "momentocumplida", "direccion", "cumplida")
 
 class ProductosSerializer(serializers.ModelSerializer):
     class Meta:
         models= Productos
-        field=("id", "nombre", "codigo")
+        fields=("id", "nombre", "codigo")
 
 class DetvisitasSerializer(serializers.ModelSerializer):
     class Meta:
         models= DetVisitas
-        field=("id", "visita", "producto", "cantidad", "observaciones","imagen")
+        fields=("id", "visita", "producto", "cantidad", "observaciones","imagen")
 
 class CamionesSerializer(serializers.ModelSerializer):
     class Meta:
             models= Camiones
-            field=("id", "marca", "modelo", "capacidad", "año")
+            fields=("id", "marca", "modelo", "capacidad", "año")
 
 class AccesorioscamionSerializer(serializers.ModelSerializer):
     class Meta:
         models= Accesorioscamion
-        field=("id", "nombre", "fechacompra", "precio")
+        fields=("id", "nombre", "fechacompra", "precio")
 
 class CheckcamionSerializer(serializers.ModelSerializer):
     class Meta:
         models=Accesorioscamion
-        field= ("id", "camion", "jornada", "luces", "limpiaparabrizas", "frenos", "nivelfluidos","cubiertas", "plataforma", "extructuras", "amarres", "accesorios", "observaciones", "imagen")
+        fields= ("id", "camion", "jornada", "luces", "limpiaparabrizas", "frenos", "nivelfluidos","cubiertas", "plataforma", "extructuras", "amarres", "accesorios", "observaciones", "imagen")
 
 class ManteniemientocamionSerializer(serializers.ModelSerializer):
     class Meta:
         models= Mantenimientocamion
-        field= ("id", "camion", "fecha", "comentarios", "imagen")
+        fields= ("id", "camion", "fecha", "comentarios", "imagen")
 
 class ServicecamionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -92,7 +92,7 @@ class ServicecamionSerializer(serializers.ModelSerializer):
 class CubiertasSerializer(serializers.ModelSerializer):
     class Meta:
         models= Cubiertas
-        field= ("id", "camion", "marca", "kmcolocacion", "kmrotacion", "kmrecambio", "fechacolocacion", "posicion")
+        fields= ("id", "camion", "marca", "kmcolocacion", "kmrotacion", "kmrecambio", "fechacolocacion", "posicion")
         
 
 
