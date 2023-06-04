@@ -94,7 +94,9 @@ class CubiertasSerializer(serializers.ModelSerializer):
         model= Cubiertas
         fields= ("id", "camion", "marca", "kmcolocacion", "kmrotacion", "kmrecambio", "fechacolocacion", "posicion")
         
-
-
+class HabilitacionescSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Habilitacionescamion
+        fields= ("camion", "nombre", "fechavencimiento")
         
 

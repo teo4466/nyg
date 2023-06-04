@@ -24,9 +24,9 @@ class PerfilempleadoViewSet(viewsets.ModelViewSet):
     serializer_class= PerfilempleadoSerializer
 
 class AccesoriosempleadoViewSet(viewsets.ModelViewSet):
-    queryset=Accesoriosempleado.objects.all()
-    permission_classes=[permissions.AllowAny]
-    serializer_class= AccesoriosempleadoSerializer
+    queryset= Accesoriosempleado.objects.all()
+    permission_classes= [permissions.AllowAny]
+    serializer_class= AccesorioscamionSerializer
 
 class AccesorioentregadoViewset(viewsets.ModelViewSet):
     queryset=Accesorioentregado.objects.all()
@@ -89,6 +89,11 @@ class ServicecamionViewset(viewsets.ModelViewSet):
     serializers_class= ServicecamionSerializer
 
 class CubiertasViewSet(viewsets.ModelViewSet):
-    query_set= Cubiertas
+    queryset= Cubiertas
     permission_classes=[permissions.AllowAny]
     serializers_class= CubiertasSerializer
+
+class HabilitacionescViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset= Habilitacionescamion
+    permission_classes=[permissions.AllowAny]
+    serializers_class= HabilitacionescSerializer
