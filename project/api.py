@@ -68,6 +68,11 @@ class DetvisitasViewSet(viewsets.ModelViewSet):
     permission_classes=[permissions.AllowAny]
     serializer_class= DetvisitasSerializer
 
+class AuditoriaViewSet(viewsets.ModelViewSet):
+    queryset= Auditoria.objects.all()
+    permission_classes=[permissions.AllowAny]
+    serializer_class= AuditoriaSerializer
+
 class CamionesViewSet(viewsets.ModelViewSet):
     queryset= Camiones.objects.all()
     permission_classes=[permissions.AllowAny]
@@ -81,7 +86,7 @@ class AccessoriocamionViewSet(viewsets.ModelViewSet):
 class CheckcamionViewSet(viewsets.ModelViewSet):
     queryset= Checkcamion.objects.all()
     permission_classes=[permissions.AllowAny]
-    serializers_class= CheckcamionSerializer
+    serializer_class= CheckcamionSerializer
 
 class MantenimientocamionViewSet(viewsets.ModelViewSet):
     queryset= Mantenimientocamion.objects.all()
@@ -94,11 +99,11 @@ class ServicecamionViewset(viewsets.ModelViewSet):
     serializer_class= ServicecamionSerializer
 
 class CubiertasViewSet(viewsets.ModelViewSet):
-    queryset= Cubiertas
+    queryset= Cubiertas.objects.all()
     permission_classes=[permissions.AllowAny]
     serializer_class= CubiertasSerializer
 
-class HabilitacionescViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset= Habilitacionescamion
+class HabilitacionescViewSet(viewsets.ModelViewSet):
+    queryset= Habilitacionescamion.objects.all()
     permission_classes=[permissions.AllowAny]
     serializer_class= HabilitacionescSerializer

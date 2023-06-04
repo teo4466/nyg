@@ -4,7 +4,7 @@ from .api import *
 
 router = routers.DefaultRouter()
 
-router.register("api/project", ClientesViewSet, "project")
+router.register("api/clientes", ClientesViewSet, "clientes")
 router.register('api/departments', DepartmentsViewSet,"departments")
 router.register('api/empleados', EmpleadosViewSet,"empleados")
 router.register('api/perfile', PerfilempleadoViewSet,"perfile")
@@ -16,6 +16,7 @@ router.register('api/capacitacione', CapacitacioneViewSet,"capacitacione")
 router.register('api/jornadas', JornadasViewSet,"jornadas")
 router.register('api/visitas', VisitasViewSet,"visitas")
 router.register('api/detvisitas', DetvisitasViewSet,"detvisitas")
+router.register('api/auditoria', AuditoriaViewSet,"auditoria")
 router.register('api/camiones', CamionesViewSet,"camiones")
 router.register('api/accesoriosc', AccessoriocamionViewSet,"accesoriosc")
 router.register('api/checks', CheckcamionViewSet,"checks")

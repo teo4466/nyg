@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from .models import Clientes
 from .models import *
 
 class ClientesSerializer(serializers.ModelSerializer):
@@ -22,12 +21,21 @@ class EmpleadosSerializer(serializers.ModelSerializer):
 class PerfilempleadoSerializer(serializers.ModelSerializer):
     class Meta:
         model=Perfilempleado
-        fields=("id" ,"empleado", "cargo")
+        fields= "__all__"
+
+        def to_representation(self, instance):
+          return {
+            'id':instance.id,
+            'empleado': instance.empleado.nombre,
+            'cargo': instance.cargo,
+          
+            
+        }
 
 class AccesoriosempleadoSerializer(serializers.ModelSerializer):
     class Meta:
         model= Accesoriosempleado
-        fields =("id", " nombre")
+        fields = "__all__"
 
 class AccesorioentregadoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -42,7 +50,7 @@ class HabilitacionesempleadoSerializer(serializers.ModelSerializer):
 class CapacitacionSerializer(serializers.ModelSerializer):
     class Meta:
         model= Capacitacion
-        fields=("id", "empleadop", "tema", "fecha")
+        fields=("id", "tema", "fecha")
 
 class CapacitacioneSerializer(serializers.ModelSerializer):
     class Meta:
@@ -52,12 +60,17 @@ class CapacitacioneSerializer(serializers.ModelSerializer):
 class JornadasSerializer(serializers.ModelSerializer):
     class Meta:
         model= Jornadas
-        fields= ("id", "empleado", "concentimiento", "entrada", "salida", "horasextras", "viaticos", "kmsalida", "kmllegada", "observaciones")
+        fields= "__all__"
 
 class VisitasSerializer(serializers.ModelSerializer):
     class Meta:
         model= Visitas
-        fields=("id", "jornada", "cliente", "momentorecibida", "momentocumplida", "direccion", "cumplida")
+        fields=("id", "jornada", "cliente", "momentorecibida", "momentocumplida", "direccion", "estado")
+
+class AuditoriaSerializer(serializers.ModelSerializer):
+    class Meta:
+         model= Auditoria
+         fields= ("id","empleadop", "jornada", "observaciones", "calificacion")
 
 class ProductosSerializer(serializers.ModelSerializer):
     class Meta:
@@ -81,8 +94,8 @@ class AccesorioscamionSerializer(serializers.ModelSerializer):
 
 class CheckcamionSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Accesorioscamion
-        fields= ("id", "camion", "jornada", "luces", "limpiaparabrizas", "frenos", "nivelfluidos","cubiertas", "plataforma", "extructuras", "amarres", "accesorios", "observaciones", "imagen")
+        model= Checkcamion
+        fields= ("id", "camion", "jornada", "luces", "limpiaparabrizas", "frenos", "nivelfluidos","cubiertas", "plataforma", "estructura", "amarres", "accesorios", "observaciones", "imagen")
 
 class ManteniemientocamionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -92,7 +105,7 @@ class ManteniemientocamionSerializer(serializers.ModelSerializer):
 class ServicecamionSerializer(serializers.ModelSerializer):
     class Meta:
         model= Servicecamion
-        field=("id", "camion", "fecharealizacion", "km", "kmproximo", "detalle")
+        fields= '__all__'
 
 class CubiertasSerializer(serializers.ModelSerializer):
     class Meta:
