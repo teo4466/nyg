@@ -16,82 +16,82 @@ class DepartmentsSerializer(serializers.ModelSerializer):
 
 class EmpleadosSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Empleados
+        model= Empleados
         fields= ("id", "nombre", "direccion", "telefono", "email", "contraseña")
 
 class PerfilempleadoSerializer(serializers.ModelSerializer):
     class Meta:
-        models=Perfilempleado
+        model=Perfilempleado
         fields=("id" ,"empleado", "cargo")
 
 class AccesoriosempleadoSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Accesoriosempleado
+        model= Accesoriosempleado
         fields =("id", " nombre")
 
 class AccesorioentregadoSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Accesorioentregado
+        model= Accesorioentregado
         fields=("id", "empleadop", "nombre", "fechaentrega")
 
 class HabilitacionesempleadoSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Habilitacionesempleado
+        model= Habilitacionesempleado
         fields=("id", "empleadop","nombre", "vencimiento")
 
 class CapacitacionSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Capacitacion
+        model= Capacitacion
         fields=("id", "empleadop", "tema", "fecha")
 
 class JornadasSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Jornadas
+        model= Jornadas
         fields= ("id", "empleado", "concentimiento", "entrada", "salida", "horasextras", "viaticos", "kmsalida", "kmllegada", "observaciones")
 
 class VisitasSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Visitas
+        model= Visitas
         fields=("id", "jornada", "cliente", "momentorecibida", "momentocumplida", "direccion", "cumplida")
 
 class ProductosSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Productos
+        model= Productos
         fields=("id", "nombre", "codigo")
 
 class DetvisitasSerializer(serializers.ModelSerializer):
     class Meta:
-        models= DetVisitas
+        model= DetVisitas
         fields=("id", "visita", "producto", "cantidad", "observaciones","imagen")
 
 class CamionesSerializer(serializers.ModelSerializer):
     class Meta:
-            models= Camiones
+            model= Camiones
             fields=("id", "marca", "modelo", "capacidad", "año")
 
 class AccesorioscamionSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Accesorioscamion
+        model= Accesorioscamion
         fields=("id", "nombre", "fechacompra", "precio")
 
 class CheckcamionSerializer(serializers.ModelSerializer):
     class Meta:
-        models=Accesorioscamion
+        model=Accesorioscamion
         fields= ("id", "camion", "jornada", "luces", "limpiaparabrizas", "frenos", "nivelfluidos","cubiertas", "plataforma", "extructuras", "amarres", "accesorios", "observaciones", "imagen")
 
 class ManteniemientocamionSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Mantenimientocamion
+        model= Mantenimientocamion
         fields= ("id", "camion", "fecha", "comentarios", "imagen")
 
 class ServicecamionSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Servicecamion
+        model= Servicecamion
         field=("id", "camion", "fecharealizacion", "km", "kmproximo", "detalle")
 
 class CubiertasSerializer(serializers.ModelSerializer):
     class Meta:
-        models= Cubiertas
+        model= Cubiertas
         fields= ("id", "camion", "marca", "kmcolocacion", "kmrotacion", "kmrecambio", "fechacolocacion", "posicion")
         
 
