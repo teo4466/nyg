@@ -41,37 +41,42 @@ class HabilitacionesempleadoViewSet(viewsets.ModelViewSet):
 class CapacitacionViewSet(viewsets.ModelViewSet):
     queryset= Capacitacion.objects.all()
     permission_classes=[permissions.AllowAny]
-    serializers_class=CapacitacionSerializer
+    serializer_class=CapacitacionSerializer
+
+class CapacitacioneViewSet(viewsets.ModelViewSet):
+    queryset= Capacitacione.objects.all()
+    permission_classes=[permissions.AllowAny]
+    serializer_class= CapacitacioneSerializer
 
 class JornadasViewSet(viewsets.ModelViewSet):
     queryset= Jornadas.objects.all()
     permission_classes=[permissions.AllowAny]
-    serializers_class= JornadasSerializer
+    serializer_class= JornadasSerializer
 
 class VisitasViewSet(viewsets.ModelViewSet):
     queryset= Visitas.objects.all()
     permission_classes=[permissions.AllowAny]
-    serializers_class= VisitasSerializer
+    serializer_class= VisitasSerializer
 
 class ProductosViewSet(viewsets.ModelViewSet):
     queryset= Productos.objects.all()
     permission_classes=[permissions.AllowAny]
-    serializers_class= ProductosSerializer
+    serializer_class= ProductosSerializer
 
 class DetvisitasViewSet(viewsets.ModelViewSet):
     queryset= DetVisitas.objects.all()
     permission_classes=[permissions.AllowAny]
-    serializers_class= DetvisitasSerializer
+    serializer_class= DetvisitasSerializer
 
 class CamionesViewSet(viewsets.ModelViewSet):
     queryset= Camiones.objects.all()
     permission_classes=[permissions.AllowAny]
-    serializers_class= CamionesSerializer
+    serializer_class= CamionesSerializer
 
 class AccessoriocamionViewSet(viewsets.ModelViewSet):
     queryset= Accesorioscamion.objects.all()
     permission_classes=[permissions.AllowAny]
-    serializers_class= AccesorioscamionSerializer
+    serializer_class= AccesorioscamionSerializer
 
 class CheckcamionViewSet(viewsets.ModelViewSet):
     queryset= Checkcamion.objects.all()
@@ -81,19 +86,19 @@ class CheckcamionViewSet(viewsets.ModelViewSet):
 class MantenimientocamionViewSet(viewsets.ModelViewSet):
     queryset= Mantenimientocamion.objects.all()
     permission_classes= [permissions.AllowAny]
-    serializers_class= ManteniemientocamionSerializer
+    serializer_class= ManteniemientocamionSerializer
 
 class ServicecamionViewset(viewsets.ModelViewSet):
     queryset= Servicecamion.objects.all()
     permission_classes=[permissions.AllowAny]
-    serializers_class= ServicecamionSerializer
+    serializer_class= ServicecamionSerializer
 
 class CubiertasViewSet(viewsets.ModelViewSet):
     queryset= Cubiertas
     permission_classes=[permissions.AllowAny]
-    serializers_class= CubiertasSerializer
+    serializer_class= CubiertasSerializer
 
 class HabilitacionescViewSet(viewsets.ReadOnlyModelViewSet):
     queryset= Habilitacionescamion
     permission_classes=[permissions.AllowAny]
-    serializers_class= HabilitacionescSerializer
+    serializer_class= HabilitacionescSerializer

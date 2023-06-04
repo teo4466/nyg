@@ -38,10 +38,14 @@ class Habilitacionesempleado(models.Model):
     vencimiento = models.DateField(auto_now=True)
 
 class Capacitacion(models.Model):
-    empleadop = models.ManyToManyField(Perfilempleado)
     tema = models.CharField(max_length=200)
     fecha = models.DateField(auto_now=True)
 
+class Capacitacione(models.Model):
+    empleadop= models.ForeignKey(Perfilempleado, on_delete=models.CASCADE)
+    capacitacion= models.ForeignKey(Capacitacion, on_delete=models.CASCADE)
+    realizada= models.BooleanField(default=True)
+ 
 class Jornadas(models.Model):
     empleadop= models.ForeignKey(Perfilempleado, on_delete=models.CASCADE)
     consentimiento = models.BooleanField(default=True)

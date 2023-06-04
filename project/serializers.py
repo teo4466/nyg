@@ -44,6 +44,11 @@ class CapacitacionSerializer(serializers.ModelSerializer):
         model= Capacitacion
         fields=("id", "empleadop", "tema", "fecha")
 
+class CapacitacioneSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Capacitacione
+        fields=("id", "empleadop", "capacitacion", "realizada")
+
 class JornadasSerializer(serializers.ModelSerializer):
     class Meta:
         model= Jornadas
