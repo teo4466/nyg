@@ -19,18 +19,18 @@ class EmpleadosSerializer(serializers.ModelSerializer):
         fields= ("id", "nombre", "direccion", "telefono", "email", "contraseña")
 
 class PerfilempleadoSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model=Perfilempleado
         fields= "__all__"
 
-        def to_representation(self, instance):
-          return {
-            'id':instance.id,
-            'empleado': instance.empleado.nombre,
+    def to_representation(self, instance):
+        return {
+            'id': instance.id,
             'cargo': instance.cargo,
-          
-            
+            'empleado': instance.empleado.nombre
         }
+
 
 class AccesoriosempleadoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -100,7 +100,7 @@ class CheckcamionSerializer(serializers.ModelSerializer):
 class ManteniemientocamionSerializer(serializers.ModelSerializer):
     class Meta:
         model= Mantenimientocamion
-        fields= ("id", "camion", "fecha", "comentarios", "imagen")
+        fields= '__all__'
 
 class ServicecamionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -110,7 +110,7 @@ class ServicecamionSerializer(serializers.ModelSerializer):
 class CubiertasSerializer(serializers.ModelSerializer):
     class Meta:
         model= Cubiertas
-        fields= ("id", "camion", "marca", "kmcolocacion", "kmrotacion", "kmrecambio", "fechacolocacion", "posicion")
+        fields= '__all__'
         
 class HabilitacionescSerializer(serializers.ModelSerializer):
     class Meta:

@@ -15,12 +15,10 @@ class DepartmentsViewSet(viewsets.ModelViewSet):
 
 class EmpleadosViewSet(viewsets.ModelViewSet):
     queryset= Empleados.objects.all()
-    permission_classes=[permissions.AllowAny]
     serializer_class= EmpleadosSerializer
 
 class PerfilempleadoViewSet(viewsets.ModelViewSet):
     queryset=Perfilempleado.objects.all()
-    permission_classes= [permissions.AllowAny]
     serializer_class= PerfilempleadoSerializer
 
 class AccesoriosempleadoViewSet(viewsets.ModelViewSet):

@@ -19,16 +19,20 @@ class Empleados(models.Model):
     email = models.EmailField(max_length=50)
     contraseña = models.CharField(max_length=10)
 
+    def __str__(self):
+        return self.nombre
+
     class Meta:
         verbose_name = 'Empleado'
         verbose_name_plural = 'Empleados'
-        ordering = ['nombre']
+        ordering = ['id']
 
 
 class Perfilempleado(models.Model):
     empleado = models.OneToOneField(Empleados, on_delete=models.CASCADE, default=None)
     cargo = models.CharField(max_length=50)
 
+   
 class Accesoriosempleado(models.Model):
     nombre = models.CharField(max_length=200)
     precio= models.CharField(max_length=50, default="0")
@@ -72,8 +76,8 @@ class Auditoria(models.Model):
 class Visitas(models.Model) :
     jornada = models.ForeignKey(Jornadas, on_delete=models.CASCADE)
     cliente = models.ForeignKey(Clientes, on_delete=models.CASCADE)
-    momentorecibida = models.DateField(auto_now_add=False)
-    momentocumplida = models.DateField(auto_now=False)
+    momentorecibida = models.DateTimeField(auto_now_add=False)
+    momentocumplida = models.DateTimeField(auto_now=False)
     direccion = models.CharField(max_length=100)
     estado = models.BooleanField(default=False)
 
@@ -113,7 +117,7 @@ class Checkcamion(models.Model):
     amarres = models.BooleanField(default=True)
     accesorios =models.BooleanField(default=True)
     observaciones = models.TextField(max_length=300)
-    imagen =models.ImageField(upload_to='camion/')
+    imagen =models.ImageField(upload_to='camion/', null=True)
     
 
 
@@ -121,7 +125,8 @@ class Mantenimientocamion(models.Model):
     camion = models.ForeignKey(Camiones, on_delete=models.CASCADE)
     fecha = models.DateField(auto_now_add=True)
     comentarios = models.TextField(max_length=300)
-    imagen =models.ImageField(upload_to='camion/')
+    imagen1 =models.ImageField(upload_to='camion/', null=True)
+    imagen2 =models.ImageField(upload_to='camion/', null=True)
 
 class Servicecamion(models.Model):
     camion = models.ForeignKey(Camiones, on_delete=models.CASCADE)
@@ -129,15 +134,20 @@ class Servicecamion(models.Model):
     km = models.CharField(max_length=10)
     kmproximo= models.CharField(max_length=10)
     detalle = models.TextField(max_length=500)
+    imagen1 =models.ImageField(upload_to='camion/', null=True)
+
 
 class Cubiertas(models.Model):
     camion = models.ForeignKey(Camiones, on_delete=models.CASCADE)
     marca = models.CharField(max_length=50)
+    codigo = models.CharField(max_length=50, default=True)
     kmcolocacion = models.CharField(max_length=10)
     kmrotacion =models.CharField(max_length=10)
     kmrecambio = models.CharField(max_length=10)
     fechacolocacion = models.DateField(auto_now_add=True)
     posicion = models.CharField(max_length=2)
+    posicion2 = models.CharField(max_length=2)
+    
 
 class Habilitacionescamion(models.Model):
     camion = models.ForeignKey(Camiones, on_delete=models.CASCADE)
