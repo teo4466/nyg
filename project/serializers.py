@@ -4,7 +4,7 @@ from .models import *
 class ClientesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Clientes
-        fields =("id", "nombre", "direccion", "telefono")
+        fields= "__all__"
         read_only_fields = ("created_at",)
 
 class DepartmentsSerializer(serializers.ModelSerializer):
@@ -16,7 +16,7 @@ class DepartmentsSerializer(serializers.ModelSerializer):
 class EmpleadosSerializer(serializers.ModelSerializer):
     class Meta:
         model= Empleados
-        fields= ("id", "nombre", "direccion", "telefono", "email", "contraseña")
+        fields= "__all__"
 
 class PerfilempleadoSerializer(serializers.ModelSerializer):
     
@@ -40,63 +40,69 @@ class AccesoriosempleadoSerializer(serializers.ModelSerializer):
 class AccesorioentregadoSerializer(serializers.ModelSerializer):
     class Meta:
         model= Accesorioentregado
-        fields=("id", "empleadop", "nombre", "fechaentrega")
+        fields= "__all__"
 
 class HabilitacionesempleadoSerializer(serializers.ModelSerializer):
     class Meta:
         model= Habilitacionesempleado
-        fields=("id", "empleadop","nombre", "vencimiento")
+        fields= "__all__"
 
 class CapacitacionSerializer(serializers.ModelSerializer):
     class Meta:
         model= Capacitacion
-        fields=("id", "tema", "fecha")
+        fields= "__all__"
 
 class CapacitacioneSerializer(serializers.ModelSerializer):
     class Meta:
         model= Capacitacione
-        fields=("id", "empleadop", "capacitacion", "realizada")
+        fields= "__all__"
 
 class JornadasSerializer(serializers.ModelSerializer):
     class Meta:
         model= Jornadas
         fields= "__all__"
 
+        def to_representation(self, instance):
+            return {
+                'id': instance.id,
+                'consentimiento': instance.consentimiento,
+                'empleado': instance.empleado.nombre
+            }
+
 class VisitasSerializer(serializers.ModelSerializer):
     class Meta:
         model= Visitas
-        fields=("id", "jornada", "cliente", "momentorecibida", "momentocumplida", "direccion", "estado")
+        fields="__all__"
 
 class AuditoriaSerializer(serializers.ModelSerializer):
     class Meta:
          model= Auditoria
-         fields= ("id","empleadop", "jornada", "observaciones", "calificacion")
+         fields= "__all__"
 
 class ProductosSerializer(serializers.ModelSerializer):
     class Meta:
         model= Productos
-        fields=("id", "nombre", "codigo")
+        fields= "__all__"
 
 class DetvisitasSerializer(serializers.ModelSerializer):
     class Meta:
         model= DetVisitas
-        fields=("id", "visita", "producto", "cantidad", "observaciones","imagen")
+        fields= "__all__"
 
 class CamionesSerializer(serializers.ModelSerializer):
     class Meta:
             model= Camiones
-            fields=("id", "marca", "modelo", "capacidad", "año")
+            fields= "__all__"
 
 class AccesorioscamionSerializer(serializers.ModelSerializer):
     class Meta:
         model= Accesorioscamion
-        fields=("id", "nombre", "fechacompra", "precio")
+        fields= "__all__"
 
 class CheckcamionSerializer(serializers.ModelSerializer):
     class Meta:
         model= Checkcamion
-        fields= ("id", "camion", "jornada", "luces", "limpiaparabrizas", "frenos", "nivelfluidos","cubiertas", "plataforma", "estructura", "amarres", "accesorios", "observaciones", "imagen")
-
+        fields= "__all__"
 class ManteniemientocamionSerializer(serializers.ModelSerializer):
     class Meta:
         model= Mantenimientocamion
@@ -115,6 +121,6 @@ class CubiertasSerializer(serializers.ModelSerializer):
 class HabilitacionescSerializer(serializers.ModelSerializer):
     class Meta:
         model= Habilitacionescamion
-        fields= ("camion", "nombre", "fechavencimiento")
+        fields= "__all__"
         
 
