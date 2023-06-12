@@ -111,7 +111,7 @@ class Accesorioscamion(models.Model):
 class Checkcamion(models.Model):
     fecha=models.CharField(max_length=50, default="")
     empleado=models.ForeignKey(Empleados, on_delete=models.CASCADE, default=None)
-    camion = models.ForeignKey(Camiones, on_delete=models.CASCADE, default=None)
+    camion = models.CharField(max_length=20)
     jornada = models.ForeignKey(Jornadas, on_delete=models.CASCADE, default=None)
     luces = models.CharField(max_length=10,default=True)
     limpiaparabrizas =models.CharField(max_length=10,default=True)
@@ -127,16 +127,15 @@ class Checkcamion(models.Model):
     imagen2 =models.ImageField(upload_to='camion/', null=True)
     firma =models.ImageField(upload_to='camion/', null=True)
     
-    
 class Mantenimientocamion(models.Model):
-    camion = models.ForeignKey(Camiones, on_delete=models.CASCADE, default=None)
+    camion = models.CharField(max_length=20)
     fecha = models.CharField(max_length=50, default="")
     comentarios = models.TextField(max_length=300)
     imagen1 =models.ImageField(upload_to='camion/', null=True)
     imagen2 =models.ImageField(upload_to='camion/', null=True)
 
 class Servicecamion(models.Model):
-    camion = models.ForeignKey(Camiones, on_delete=models.CASCADE, default=None)
+    camion = models.CharField(max_length=20)
     fecharealizacion=models.CharField(max_length=50, default="")
     km = models.CharField(max_length=10)
     kmproximo= models.CharField(max_length=10)
@@ -145,7 +144,7 @@ class Servicecamion(models.Model):
 
 
 class Cubiertas(models.Model):
-    camion = models.ForeignKey(Camiones, on_delete=models.CASCADE, default=None)
+    camion = models.CharField(max_length=20)
     marca = models.CharField(max_length=50)
     codigo = models.CharField(max_length=50, default=True)
     kmcolocacion = models.CharField(max_length=10)
@@ -157,14 +156,14 @@ class Cubiertas(models.Model):
 
 class Combustible(models.Model):
     fecha= models.CharField(max_length=50, default="")
-    camion = models.ForeignKey(Camiones, on_delete=models.CASCADE, default=None)
+    camion = models.CharField(max_length=20)
     km = models.CharField(max_length=10)
     Litros = models.CharField(max_length=10)
     imagen1 =models.ImageField(upload_to='camion/', null=True)
 
 class Gastos(models.Model):
      fecha= models.CharField(max_length=50, default="")
-     camion = models.ForeignKey(Camiones, on_delete=models.CASCADE, default=None)
+     camion = models.CharField(max_length=20)
      tema = models.CharField(max_length=10)
      descripcion = models.CharField(max_length=10)
      imagen1 =models.ImageField(upload_to='camion/', null=True)
@@ -172,7 +171,7 @@ class Gastos(models.Model):
     
 
 class Habilitacionescamion(models.Model):
-    camion = models.ForeignKey(Camiones, on_delete=models.CASCADE)
+    camion = models.CharField(max_length=20)
     nombre = models.CharField(max_length=100)
     fechavencimiento= models.CharField(max_length=50, default="")
     

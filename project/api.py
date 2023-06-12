@@ -46,6 +46,12 @@ class CapacitacioneViewSet(viewsets.ModelViewSet):
     permission_classes=[permissions.AllowAny]
     serializer_class= CapacitacioneSerializer
 
+class CombustibleViewSet(viewsets.ModelViewSet):
+    queryset= Combustible.objects.all()
+    permission_classes=[permissions.AllowAny]
+    serializer_classs=CombustibleSerializer
+
+
 class JornadasViewSet(viewsets.ModelViewSet):
     queryset= Jornadas.objects.all()
     permission_classes=[permissions.AllowAny]

@@ -94,6 +94,11 @@ class CamionesSerializer(serializers.ModelSerializer):
             model= Camiones
             fields= "__all__"
 
+class CombustibleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Combustible
+        fields="__all__"
+
 class AccesorioscamionSerializer(serializers.ModelSerializer):
     class Meta:
         model= Accesorioscamion
