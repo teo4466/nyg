@@ -67,11 +67,11 @@ class Jornadas(models.Model):
     camion=models.CharField(max_length=10)
     consentimiento = models.BooleanField(default=True)
     entrada =models.CharField(max_length=50)
-    salida = models.CharField(max_length=50)
-    horasextras = models.CharField(max_length=1)
-    viaticos = models.CharField(max_length=1)
+    salida = models.CharField(max_length=50, default=None)
+    horasextras = models.CharField(max_length=1, default=None)
+    viaticos = models.CharField(max_length=1, default=None)
     kmsalida = models.CharField(max_length=20)
-    kmllegada = models.CharField(max_length=20)
+    kmllegada = models.CharField(max_length=20, default=None)
     observaciones = models.TextField(max_length=400, default=True)
 
 class Auditoria(models.Model):
@@ -82,11 +82,10 @@ class Auditoria(models.Model):
     calificacion= models.CharField(max_length=200)
 
 class Visitas(models.Model) :
-    jornada = models.ForeignKey(Jornadas, on_delete=models.CASCADE, default=None)
-    cliente = models.ForeignKey(Clientes, on_delete=models.CASCADE, default=None)
-    momentorecibida = models.CharField(max_length=50)
-    momentocumplida = models.CharField(max_length=50)
-    direccion = models.CharField(max_length=100)
+    empleado= models.ForeignKey(Empleados, on_delete=models.CASCADE, default=True)
+    cliente = models.ForeignKey(Clientes, on_delete=models.CASCADE, default=True)
+    momentorecibida = models.CharField(max_length=50,default=True)
+    momentocumplida = models.CharField(max_length=50, default=None)
     estado = models.BooleanField(default=False)
     observacion= models.TextField(max_length=300, default=None)
     

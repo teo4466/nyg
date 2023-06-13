@@ -74,6 +74,17 @@ class VisitasSerializer(serializers.ModelSerializer):
         model= Visitas
         fields="__all__"
 
+    def to_representation(self, instance):
+            return {
+                'id': instance.id,
+                'empleado': instance.empleado.nombre,
+                'cliente': instance.cliente.nombre,
+                'momentorecibida': instance.momentorecibida,
+                'momentocumplida': instance.momentocumplida ,
+                'estad0': instance.estado,
+                'observacion': instance.observacion
+            }
+
 class AuditoriaSerializer(serializers.ModelSerializer):
     class Meta:
          model= Auditoria
@@ -97,6 +108,11 @@ class CamionesSerializer(serializers.ModelSerializer):
 class CombustibleSerializer(serializers.ModelSerializer):
     class Meta:
         model=Combustible
+        fields="__all__"
+
+class GastoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Gastos
         fields="__all__"
 
 class AccesorioscamionSerializer(serializers.ModelSerializer):
