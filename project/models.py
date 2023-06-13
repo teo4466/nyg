@@ -63,7 +63,7 @@ class Camiones(models.Model):
     año = models.CharField(max_length=10)
  
 class Jornadas(models.Model):
-    empleado= models.ForeignKey(Empleados, on_delete=models.CASCADE, default=None)
+    empleado= models.CharField(max_length=50)
     camion=models.CharField(max_length=10)
     consentimiento = models.BooleanField(default=True)
     entrada =models.CharField(max_length=50)
@@ -76,14 +76,14 @@ class Jornadas(models.Model):
 
 class Auditoria(models.Model):
     fecha=models.CharField(max_length=50, default="")
-    empleado= models.ForeignKey(Empleados, on_delete=models.CASCADE, default=None)
-    jornada= models.ForeignKey(Jornadas, on_delete=models.CASCADE)
+    empleado= models.CharField(max_length=50)
     observaciones= models.TextField(max_length=300)
     calificacion= models.CharField(max_length=200)
 
 class Visitas(models.Model) :
-    empleado= models.ForeignKey(Empleados, on_delete=models.CASCADE, default=True)
-    cliente = models.ForeignKey(Clientes, on_delete=models.CASCADE, default=True)
+    empleado= models.CharField(max_length=50)
+    cliente = models.CharField(max_length=50)
+    direccion=models.CharField(max_length=100)
     momentorecibida = models.CharField(max_length=50,default=True)
     momentocumplida = models.CharField(max_length=50, default=None)
     estado = models.BooleanField(default=False)
@@ -109,9 +109,8 @@ class Accesorioscamion(models.Model):
 
 class Checkcamion(models.Model):
     fecha=models.CharField(max_length=50, default="")
-    empleado=models.ForeignKey(Empleados, on_delete=models.CASCADE, default=None)
+    empleado=models.CharField(max_length=50)
     camion = models.CharField(max_length=20)
-    jornada = models.ForeignKey(Jornadas, on_delete=models.CASCADE, default=None)
     luces = models.CharField(max_length=10,default=True)
     limpiaparabrizas =models.CharField(max_length=10,default=True)
     frenos = models.CharField(max_length=10,default=True)
