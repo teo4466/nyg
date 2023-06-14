@@ -157,7 +157,9 @@ class Combustible(models.Model):
     camion = models.CharField(max_length=20)
     km = models.CharField(max_length=10)
     Litros = models.CharField(max_length=10)
+    importe= models.CharField(max_length=20, default=False)
     imagen1 =models.ImageField(upload_to='camion/', null=True)
+
 
 class Gastos(models.Model):
      fecha= models.CharField(max_length=50, default="")
