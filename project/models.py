@@ -85,9 +85,9 @@ class Visitas(models.Model) :
     cliente = models.CharField(max_length=50)
     direccion=models.CharField(max_length=100)
     momentorecibida = models.CharField(max_length=50,default=True)
-    momentocumplida = models.CharField(max_length=50, default=None)
+    momentocumplida = models.CharField(max_length=50, default=False)
     estado = models.BooleanField(default=False)
-    observacion= models.TextField(max_length=300, default=None)
+    observacion= models.TextField(max_length=300, default=False)
     
 
 class Productos(models.Model):

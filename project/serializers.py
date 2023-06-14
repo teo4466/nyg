@@ -63,14 +63,12 @@ class JornadasSerializer(serializers.ModelSerializer):
         fields= "__all__"
 
       
-
 class VisitasSerializer(serializers.ModelSerializer):
     class Meta:
         model= Visitas
         fields="__all__"
 
   
-
 class AuditoriaSerializer(serializers.ModelSerializer):
     class Meta:
          model= Auditoria
