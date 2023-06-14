@@ -62,28 +62,14 @@ class JornadasSerializer(serializers.ModelSerializer):
         model= Jornadas
         fields= "__all__"
 
-        def to_representation(self, instance):
-            return {
-                'id': instance.id,
-                'consentimiento': instance.consentimiento,
-                'empleado': instance.empleado.nombre
-            }
+      
 
 class VisitasSerializer(serializers.ModelSerializer):
     class Meta:
         model= Visitas
         fields="__all__"
 
-    def to_representation(self, instance):
-            return {
-                'id': instance.id,
-                'empleado': instance.empleado.nombre,
-                'cliente': instance.cliente.nombre,
-                'momentorecibida': instance.momentorecibida,
-                'momentocumplida': instance.momentocumplida ,
-                'estad0': instance.estado,
-                'observacion': instance.observacion
-            }
+  
 
 class AuditoriaSerializer(serializers.ModelSerializer):
     class Meta:
