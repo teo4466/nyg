@@ -81,13 +81,15 @@ class Auditoria(models.Model):
     calificacion= models.CharField(max_length=200)
 
 class Visitas(models.Model) :
+    ciudad=models.CharField(max_length=20, default=True)
     empleado= models.CharField(max_length=50)
     cliente = models.CharField(max_length=50)
     direccion=models.CharField(max_length=100)
     momentorecibida = models.CharField(max_length=50,default=True)
     momentocumplida = models.CharField(max_length=50, default=False)
-    estado = models.BooleanField(default=False)
+    estado = models.CharField(max_length=20,default=False)
     observacion= models.TextField(max_length=300, default=False)
+    imagen =models.ImageField(upload_to='visitas/', null=True)
     
 
 class Productos(models.Model):
