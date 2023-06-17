@@ -148,10 +148,10 @@ class Cubierta(models.Model):
     marca = models.CharField(max_length=50)
     kmcolocacion = models.CharField(max_length=10)
     kmrotacion =models.CharField(max_length=20, default=True)
-    kmrecambio = models.CharField(max_length=10, default=True)
-    fechac = models.CharField(max_length=50)
-    posicion = models.CharField(max_length=50)
-    posicion2 = models.CharField(max_length=20, default=True)
+   # kmrecambio = models.CharField(max_length=10, default=True)
+    #fechac = models.CharField(max_length=50)
+    #posicion = models.CharField(max_length=50)
+    #posicion2 = models.CharField(max_length=20, default=True)
 
 class Combustible(models.Model):
     fecha= models.CharField(max_length=50, default="")
