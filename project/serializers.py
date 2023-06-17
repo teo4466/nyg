@@ -121,7 +121,7 @@ class ServicecamionSerializer(serializers.ModelSerializer):
 class CubiertasSerializer(serializers.ModelSerializer):
     class Meta:
         model= Cubiertas
-        fields= '__all__'
+        fields="__all__"
         
 class HabilitacionescSerializer(serializers.ModelSerializer):
     class Meta:
