@@ -89,7 +89,7 @@ class Visitas(models.Model) :
     momentocumplida = models.CharField(max_length=50, default=False)
     estado = models.CharField(max_length=20,default=False)
     observacion= models.TextField(max_length=300, default=False)
-    imagen =models.ImageField(upload_to='visitas/', null=True)
+    imagen =models.ImageField(upload_to='visitas/', default=False)
     
 
 class Productos(models.Model):
@@ -148,11 +148,11 @@ class Cubiertas(models.Model):
     marca = models.CharField(max_length=50)
     codigo = models.CharField(max_length=50, default=True)
     kmcolocacion = models.CharField(max_length=10)
-    kmrotacion =models.CharField(max_length=10)
-    kmrecambio = models.CharField(max_length=10)
-    fechacolocacion = models.CharField(max_length=50, default="")
+    kmrotacion =models.CharField(max_length=10, default=True)
+    kmrecambio = models.CharField(max_length=10, default=True)
+    fechacolocacion = models.CharField(max_length=50)
     posicion = models.CharField(max_length=2)
-    posicion2 = models.CharField(max_length=2)
+    posicion2 = models.CharField(max_length=2, default=True)
 
 class Combustible(models.Model):
     fecha= models.CharField(max_length=50, default="")
