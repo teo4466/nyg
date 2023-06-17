@@ -144,7 +144,7 @@ class Servicecamion(models.Model):
 
 
 class Cubierta(models.Model):
-    camion = models.CharField(max_length=20)
+    camion = models.CharField(max_length=50)
     marca = models.CharField(max_length=50)
     kmcolocacion = models.CharField(max_length=10)
     kmrotacion =models.CharField(max_length=10, default=True)
