@@ -150,8 +150,8 @@ class Cubiertas(models.Model):
     kmrotacion =models.CharField(max_length=10, default=True)
     kmrecambio = models.CharField(max_length=10, default=True)
     fechacolocacion = models.CharField(max_length=50)
-    posicion = models.CharField(max_length=2)
-    posicion2 = models.CharField(max_length=2, default=True)
+    #posicion = models.CharField(max_length=2)
+    #posicion2 = models.CharField(max_length=2, default=True)
 
 class Combustible(models.Model):
     fecha= models.CharField(max_length=50, default="")
