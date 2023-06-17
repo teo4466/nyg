@@ -107,10 +107,10 @@ class ServicecamionViewset(viewsets.ModelViewSet):
     permission_classes=[permissions.AllowAny]
     serializer_class= ServicecamionSerializer
 
-class CubiertasViewSet(viewsets.ModelViewSet):
-      queryset= Cubiertas.objects.all()
+class CubiertaViewSet(viewsets.ModelViewSet):
+      queryset= Cubierta.objects.all()
       permission_classes=[permissions.AllowAny]
-      serializer_class= CubiertasSerializer
+      serializer_class= CubiertaSerializer
 
 class HabilitacionescViewSet(viewsets.ModelViewSet):
     queryset= Habilitacionescamion.objects.all()

@@ -19,7 +19,7 @@ admin.site.register( Accesorioscamion)
 admin.site.register( Checkcamion)
 admin.site.register( Mantenimientocamion)
 admin.site.register( Servicecamion)
-admin.site.register( Cubiertas)
+admin.site.register( Cubierta)
 admin.site.register( Habilitacionescamion)
 
 

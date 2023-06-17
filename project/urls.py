@@ -25,7 +25,7 @@ router.register('api/mantenimientoc', MantenimientocamionViewSet,"mantenimientoc
 router.register('api/combustible', CombustibleViewSet,"combustible")
 router.register('api/gasto', GastosViewSet,"gasto")
 router.register('api/service', ServicecamionViewset,"service")
-router.register('api/cubiertas', CubiertasViewSet,"cubiertas")
+router.register('api/cubierta', CubiertaViewSet,"cubierta")
 router.register('api/habilitacionesc', HabilitacionescViewSet,"habilitacionsc")
 
 urlpatterns = router.urls

@@ -143,15 +143,15 @@ class Servicecamion(models.Model):
     imagen1 =models.ImageField(upload_to='camion/', null=True)
 
 
-class Cubiertas(models.Model):
+class Cubierta(models.Model):
     camion = models.CharField(max_length=20)
     marca = models.CharField(max_length=50)
-    #kmcolocacion = models.CharField(max_length=10)
-    #kmrotacion =models.CharField(max_length=10, default=True)
-    #kmrecambio = models.CharField(max_length=10, default=True)
-    #fechac = models.CharField(max_length=50)
-    #posicion = models.CharField(max_length=20)
-    #posicion2 = models.CharField(max_length=20, default=True)
+    kmcolocacion = models.CharField(max_length=10)
+    kmrotacion =models.CharField(max_length=10, default=True)
+    kmrecambio = models.CharField(max_length=10, default=True)
+    fechac = models.CharField(max_length=50)
+    posicion = models.CharField(max_length=20)
+    posicion2 = models.CharField(max_length=20, default=True)
 
 class Combustible(models.Model):
     fecha= models.CharField(max_length=50, default="")
