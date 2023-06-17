@@ -146,13 +146,13 @@ class Servicecamion(models.Model):
 class Cubiertas(models.Model):
     camion = models.CharField(max_length=20)
     marca = models.CharField(max_length=50)
-    codigo = models.CharField(max_length=50, default=True)
-    kmcolocacion = models.CharField(max_length=10)
-    kmrotacion =models.CharField(max_length=10, default=True)
-    kmrecambio = models.CharField(max_length=10, default=True)
-    fechacolocacion = models.CharField(max_length=50)
-    posicion = models.CharField(max_length=2)
-    posicion2 = models.CharField(max_length=2, default=True)
+   # codigo = models.CharField(max_length=50, default=True)
+   # kmcolocacion = models.CharField(max_length=10)
+    #kmrotacion =models.CharField(max_length=10, default=True)
+    #kmrecambio = models.CharField(max_length=10, default=True)
+   # fechacolocacion = models.CharField(max_length=50)
+   # posicion = models.CharField(max_length=2)
+    #posicion2 = models.CharField(max_length=2, default=True)
 
 class Combustible(models.Model):
     fecha= models.CharField(max_length=50, default="")
