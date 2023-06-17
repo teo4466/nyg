@@ -106,7 +106,7 @@ class DetVisitas(models.Model):
 
 class Accesorioscamion(models.Model):
     nombre = models.CharField(max_length=100, default=None)
-    fechacompra = models.CharField(max_length=50, default="")
+    fechacompra = models.CharField(max_length=50, default=False)
     precio = models.FloatField(max_length=20)
 
 class Checkcamion(models.Model):
@@ -148,7 +148,7 @@ class Cubierta(models.Model):
     marca = models.CharField(max_length=50)
     kmcolocacion = models.CharField(max_length=10)
     kmrotacion =models.CharField(max_length=20, default=True)
-   # kmrecambio = models.CharField(max_length=10, default=True)
+    kmrecambio = models.CharField(max_length=10, default=True)
     #fechac = models.CharField(max_length=50)
     #posicion = models.CharField(max_length=50)
     #posicion2 = models.CharField(max_length=20, default=True)
