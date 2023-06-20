@@ -29,8 +29,10 @@ class Empleados(models.Model):
 
 
 class Perfilempleado(models.Model):
-    empleado = models.OneToOneField(Empleados, on_delete=models.CASCADE, default=None)
-    cargo = models.CharField(max_length=50)
+    empleado = models.CharField(max_length=50)
+    fecha=models.CharField(max_length=50)
+    periodo=models.CharField(max_length=50)
+    observaciones=models.CharField(max_length=300)
 
    
 class Accesoriosempleado(models.Model):
@@ -38,9 +40,9 @@ class Accesoriosempleado(models.Model):
     precio= models.CharField(max_length=50, default="0")
 
 class Accesorioentregado(models.Model):
-    empleado = models.ForeignKey(Empleados, on_delete=models.CASCADE, default=None)
-    nombre = models.ForeignKey(Accesoriosempleado, on_delete=models.CASCADE, default=None)
-    fechaentrega = models.DateField(auto_now= True)
+    empleado = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=50)
+    fechaentrega = models.CharField(max_length=50)
 
 class Habilitacionesempleado(models.Model):
     empleado = models.CharField(max_length=50, default=None)
@@ -53,9 +55,11 @@ class Capacitacion(models.Model):
     fecha = models.DateField(auto_now=True)
 
 class Capacitacione(models.Model):
-    empleado= models.ForeignKey(Empleados, on_delete=models.CASCADE , default=None)
-    capacitacion= models.ForeignKey(Capacitacion, on_delete=models.CASCADE)
-    realizada= models.BooleanField(default=True)
+    fecha= models.CharField(max_length=50)
+    empleado= models.CharField(max_length=50)
+    temas= models.CharField(max_length=200)
+    duracion=models.CharField(max_length=50)
+    profesor=models.CharField(max_length=50)
 
 class Camiones(models.Model):
     marca = models.CharField(max_length=20)
