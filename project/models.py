@@ -43,9 +43,10 @@ class Accesorioentregado(models.Model):
     fechaentrega = models.DateField(auto_now= True)
 
 class Habilitacionesempleado(models.Model):
-    empleado = models.ForeignKey(Empleados, on_delete=models.CASCADE, default=None)
+    empleado = models.CharField(max_length=50, default=None)
     nombre = models.CharField(max_length=200)
-    vencimiento = models.DateField(auto_now=True)
+    vencimiento = models.CharField(max_length=50)
+    imagen1 =models.ImageField(upload_to='empleado/', default="")
 
 class Capacitacion(models.Model):
     tema = models.CharField(max_length=200)
@@ -176,6 +177,7 @@ class Habilitacionescamion(models.Model):
     camion = models.CharField(max_length=20)
     nombre = models.CharField(max_length=100)
     fechavencimiento= models.CharField(max_length=50, default="")
+    imagen1 =models.ImageField(upload_to='camion/', default="")
     
 
 
