@@ -24,14 +24,6 @@ class PerfilempleadoSerializer(serializers.ModelSerializer):
         model=Perfilempleado
         fields= "__all__"
 
-    def to_representation(self, instance):
-        return {
-            'id': instance.id,
-            'cargo': instance.cargo,
-            'empleado': instance.empleado.nombre
-        }
-
-
 class AccesoriosempleadoSerializer(serializers.ModelSerializer):
     class Meta:
         model= Accesoriosempleado
