@@ -75,7 +75,7 @@ class Jornadas(models.Model):
     salida = models.CharField(max_length=50, default=None)
     horasextras = models.CharField(max_length=1, default=None)
     viaticos = models.CharField(max_length=1, default=None)
-    kmsalida = models.CharField(max_length=20)
+    kmsalida = models.CharField(max_length=20, default="")
     kmllegada = models.CharField(max_length=20, default=None)
     observaciones = models.TextField(max_length=400, default=True)
 
@@ -128,8 +128,8 @@ class Checkcamion(models.Model):
     amarres = models.CharField(max_length=10,default=True)
     accesorios =models.CharField(max_length=10,default=True)
     observaciones = models.TextField(max_length=300)
-    imagen =models.ImageField(upload_to='camion/', null=True)
-    imagen2 =models.ImageField(upload_to='camion/', null=True)
+    imagen =models.ImageField(upload_to='camion/', default=False)
+    imagen2 =models.ImageField(upload_to='camion/', default=False)
     firma =models.ImageField(upload_to='camion/', null=True)
     
 class Mantenimientocamion(models.Model):
