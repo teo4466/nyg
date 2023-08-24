@@ -93,8 +93,11 @@ class Visitas(models.Model) :
     momentorecibida = models.CharField(max_length=50,default=True)
     momentocumplida = models.CharField(max_length=50, default=False)
     estado = models.CharField(max_length=20,default=False)
-    observacion= models.TextField(max_length=300, default=False)
-    imagen =models.ImageField(upload_to='visitas/', default=False)
+    observacion= models.TextField(max_length=300, default="")
+    flujo= models.CharField(max_length=20 , default="")
+    horas=models.CharField(max_length=20, default="")
+    litros=models.CharField(max_length=20,default="")
+    imagen =models.ImageField(upload_to='visitas/', default="")
     
 
 class Productos(models.Model):

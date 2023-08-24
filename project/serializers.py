@@ -82,15 +82,12 @@ class CamionesSerializer(serializers.ModelSerializer):
             fields= "__all__"
 
 class CombustibleSerializer(serializers.ModelSerializer):
-    image_data = serializers.SerializerMethodField()
-    
+
     class Meta:
-        model=Combustible
-        fields="__all__"
+        model = Combustible
+        fields = "__all__"
 
-    def get_image_data(self, obj):
-        return obj.image.read()
-
+  
 class GastoSerializer(serializers.ModelSerializer):
     class Meta:
         model=Gastos
