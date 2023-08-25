@@ -191,8 +191,8 @@ class Envases(models.Model):
     numero = models.CharField(max_length=50, unique=True)
     fecha= models.CharField(max_length=50)
     diereccion= models.CharField(max_length=100)
-    opcion1= models.CharField(max_length=50)
-    opcion2= models.CharField(max_length=50)
+    opcion1= models.CharField(max_length=50, default="")
+    opcion2= models.CharField(max_length=50, default="")
     
     
 
