@@ -188,7 +188,7 @@ class Habilitacionescamion(models.Model):
 
 class Envases(models.Model):
     fecha = models.CharField(max_length=20)
-    numero = models.CharField(max_length=50)
+    numero = models.CharField(max_length=50, unique=True)
     fecha= models.CharField(max_length=50)
     diereccion= models.CharField(max_length=100)
     opcion1= models.CharField(max_length=50)
