@@ -116,3 +116,8 @@ class HabilitacionescViewSet(viewsets.ModelViewSet):
     queryset= Habilitacionescamion.objects.all()
     permission_classes=[permissions.AllowAny]
     serializer_class= HabilitacionescSerializer
+
+class EnvasesViewSet(viewsets.ModelViewSet):
+    queryset= Envases.objects.all()
+    permission_classes=[permissions.AllowAny]
+    serializer_class= EnvasesSerializer

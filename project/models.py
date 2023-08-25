@@ -185,6 +185,15 @@ class Habilitacionescamion(models.Model):
     nombre = models.CharField(max_length=100)
     fechavencimiento= models.CharField(max_length=50, default="")
     imagen1 =models.ImageField(upload_to='camion/', default="")
+
+class Envases(models.Model):
+    fecha = models.CharField(max_length=20)
+    numero = models.CharField(max_length=50)
+    fecha= models.CharField(max_length=50)
+    diereccion= models.CharField(max_length=100)
+    diereccion= models.CharField(max_length=50)
+    diereccion= models.CharField(max_length=50)
+    
     
 
 

@@ -122,4 +122,8 @@ class HabilitacionescSerializer(serializers.ModelSerializer):
         model= Habilitacionescamion
         fields= "__all__"
         
+class EnvasesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Envases
+        fields= "__all__"
 
